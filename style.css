@@ -1,0 +1,20 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 402px;
+    width: 402px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eachBox {
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+    background-color: white;
+}
