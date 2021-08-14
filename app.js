@@ -6,10 +6,10 @@ const setNewGridNumberBtn = document.querySelector("#setNewGridNumberBtn");
 const clearBtn = document.querySelector("#clearBtn");
 const blueBtn = document.querySelector("#blueBtn");
 const rainbowBtn = document.querySelector("#rainbowBtn");
-const darkenBtn = document.querySelector("#darkenBtn");
+const fadeBtn = document.querySelector("#fadeBtn");
 
 // init
-createGrid(4);
+createGrid(16);
 
 
 clearBtn.addEventListener("click", clearGrid);
@@ -25,12 +25,16 @@ rainbowBtn.addEventListener("click", () => {
         })
     })
 })
-darkenBtn.addEventListener("click", () => {
-    let random = getRandomInt(359)
+fadeBtn.addEventListener("click", () => {
+    let randomR = getRandomInt(255);
+    let randomG = getRandomInt(255);
+    let randomB = getRandomInt(255);
+    let startOpacity = 1;
     const eachBox = document.querySelectorAll(".eachBox");
     eachBox.forEach((box) => {
         box.addEventListener("mouseover", (e) => {
-            e.target.style.backgroundColor = `hsl(${random},${getRandomInt(255)},${getRandomInt(255)})`;
+            e.target.style.backgroundColor = `rgba(${randomR},${randomG},${randomB},${startOpacity})`;
+            startOpacity = startOpacity - 0.01;
         })
     })
 })
@@ -52,6 +56,8 @@ setNewGridNumberBtn.addEventListener("click", () => {
 })
 
 function createGrid(num) {
+    let containerSize = 
+
     if(num > 50) {
         alert("Number must be below 50")
         createGrid(16);
@@ -64,7 +70,7 @@ function createGrid(num) {
         box.style.width = `${400/num}px`
         container.appendChild(box)
     }
-    color("red");
+    color("DarkSlateGray");
 }
 
 function removeGrid() {
