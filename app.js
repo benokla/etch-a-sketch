@@ -9,7 +9,7 @@ const rainbowBtn = document.querySelector("#rainbowBtn");
 const fadeBtn = document.querySelector("#fadeBtn");
 
 // init
-createGrid(16);
+createGrid(2);
 
 
 clearBtn.addEventListener("click", clearGrid);
@@ -56,7 +56,6 @@ setNewGridNumberBtn.addEventListener("click", () => {
 })
 
 function createGrid(num) {
-    let containerSize = 
 
     if(num > 50) {
         alert("Number must be below 50")
